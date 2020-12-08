@@ -110,10 +110,14 @@ char* read_file(const char* src, int* col, int* row) {
     return temp;
 }
 
+int main(int argc, char** argv) {
+    if (argc != 2) {
+        fprintf(stderr, "file not found\n");
+        return -1;
+    }
 
-int main() {
     int cols = 0, rows = 0;
-    char* buffer = read_file("./input.txt", &cols, &rows);
+    char* buffer = read_file(argv[1], &cols, &rows);
 
     assert((int) strlen(buffer) == cols * rows);
 
