@@ -59,6 +59,7 @@ int count_trees_part_2(const char* map, int cols, int rows) {
     for (int i = 0; i < 5; i++){
         product *= count[i];
     }
+
     return product;
 }
 
@@ -107,6 +108,7 @@ char* read_file(const char* src, int* col, int* row) {
     *col = cols;
     *row = rows;
     fclose(fp);
+
     return temp;
 }
 
@@ -132,6 +134,7 @@ int main(int argc, char** argv) {
         int count = count_trees_part_2(buffer, cols, rows);
         printf("Tree count = %d\n", count);
     }
+
     return 0;
 }
 
