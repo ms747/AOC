@@ -30,7 +30,7 @@ calculate :: String -> IO ()
 calculate file = do
     file <- openFile file ReadMode
     fileContents <- hGetContents file
-    let seats = map seat . lines $fileContents
+    let seats = map seat . lines $ fileContents
     let min = minimum seats
     let max = maximum seats
     let seat_id = head $ filter (`notElem` seats) [min..max]
