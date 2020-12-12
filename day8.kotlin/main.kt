@@ -22,15 +22,15 @@ class Instruction {
 }
 
 class Cpu {
-	var acc: Int
+    var acc: Int
     var ip : Int
     var instructions : MutableList<Instruction>;
 
     init {
-		this.acc = 0
+        this.acc = 0
         this.ip = 0
         this.instructions = arrayListOf()
-	}
+    }
 
     fun findLoopIndex() : Int {
         var instructionVisit : HashMap<Int, Boolean> = hashMapOf();
@@ -54,7 +54,7 @@ class Cpu {
             this.ip += 1
         }
         return previousInstruction
-	}
+    }
 
     fun swapInstruction(index: Int) {
         var instruction = this.instructions[index]
@@ -89,7 +89,7 @@ class Cpu {
             }
             this.ip += 1
         }
-	}
+    }
 
     fun reset() {
         this.ip = 0
