@@ -32,30 +32,6 @@ class Cpu {
         this.instructions = arrayListOf()
     }
 
-    fun findLoopIndex() : Int {
-        var instructionVisit : HashMap<Int, Boolean> = hashMapOf();
-        var previousInstruction = 0
-        while (true) {
-            if (instructionVisit.containsKey(this.ip)) {
-                break
-            }
-            instructionVisit.put(this.ip, true);
-            var instruction = this.instructions[this.ip]
-            when (instruction.opcode) {
-                Opcode.ACC -> {
-                    this.acc += instruction.value
-                }
-                Opcode.NOP -> {}
-                Opcode.JMP -> {
-                    previousInstruction = this.ip
-                    this.ip += (instruction.value - 1)
-                }
-            }
-            this.ip += 1
-        }
-        return previousInstruction
-    }
-
     fun swapInstruction(index: Int) {
         var instruction = this.instructions[index]
         if (instruction.opcode == Opcode.NOP) {
