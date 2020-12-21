@@ -28,7 +28,6 @@ class MainClass {
 
     public static void Main() {
         int[] starting = {0, 3, 1, 6, 7, 5};
-
         Dictionary<int, NumberInfo> visits = new Dictionary<int, NumberInfo>();
         int lastSpokenNumber = -1;
 
