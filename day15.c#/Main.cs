@@ -45,9 +45,7 @@ class MainClass {
                         } else {
                             visits[lastSpokenNumber] = new NumberInfo(0, i, i);
                         }
-                    }
-
-                    else {
+                    } else {
                         lastSpokenNumber =
                             visits[lastSpokenNumber].second - visits[lastSpokenNumber].first;
 
