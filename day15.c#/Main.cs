@@ -21,7 +21,8 @@ class MainClass {
 
         public override string ToString() {
             return
-                "Count : " + this.count + " First : " + this.first + " Second : " + this.second;
+                "Count : " + this.count + " First : " + this.first +
+                " Second : " + this.second;
         }
 
     }
@@ -46,7 +47,8 @@ class MainClass {
                         }
                     } else {
                         lastSpokenNumber =
-                            visits[lastSpokenNumber].second - visits[lastSpokenNumber].first;
+                            visits[lastSpokenNumber].second
+                            - visits[lastSpokenNumber].first;
 
                         if (visits.ContainsKey(lastSpokenNumber)) {
                             visits[lastSpokenNumber].NewPosition(i);
