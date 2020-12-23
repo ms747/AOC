@@ -98,14 +98,14 @@ void main(List<String> args) async {
                 acc.addAll(item.value); return acc;
             });
 
-    int sum = 0;
     List<int> indicesToBeRemove = new List();
-    for (int i in nearByTickets) {
-        if (!flatRules.contains(i)) {
-            sum += i;
-            indicesToBeRemove.add(i);
+    int sum = nearByTickets.fold(0, (acc, item) {
+        if (!flatRules.contains(item)) {
+            acc += item;
+            indicesToBeRemove.add(item);
         }
-    }
+        return acc;
+    });
 
     print("Part 1 $sum");
 
